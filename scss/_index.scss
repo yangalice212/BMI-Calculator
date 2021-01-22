@@ -52,44 +52,70 @@ header{
     .status{
         display: none;
         font-size: 32px;
-        position: relative;
+        text-align: center;
         .status-inner{
-            padding: 40px 18px;
-
+            padding: 20px 18px;
+            position: relative;
         }
         a{
             position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        p{
+            font-size: 14px;
         }
     }
     .light{
-        border: 6px solid #31BAF9;
+        border: 6px solid $light;
         border-radius: 50%;
-        color: #31BAF9;
+        color: $light;
+        a{
+            background: $light;
+        }
     }
     .balance{
-        border: 6px solid #86D73F;
+        border: 6px solid $balance;
         border-radius: 50%;
-        color: #86D73F;
+        color: $balance;
+        a{
+            background: $balance;
+        }
     }
     .fat{
-        border: 6px solid#FF982D;
+        border: 6px solid $fat;
         border-radius: 50%;
-        color: #FF982D;
+        color: $fat;
+        a{
+            background: $fat;
+        }
     }
     .fat-1{
-        border: 6px solid #FF6C03;
+        border: 6px solid $fat12;
         border-radius: 50%;
-        color: #FF6C03;
+        color: $fat12;
+        a{
+            background: $fat12;
+        }
     }
     .fat-2{
-        border: 6px solid #FF6C03;
+        border: 6px solid $fat12;
         border-radius: 50%;
-        color: #FF6C03;
+        color: $fat12;
+        a{
+            background: $fat12;
+        }
     }
     .fat-3{
-        border: 6px solid #FF1200;
+        border: 6px solid $fat3;
         border-radius: 50%;
-        color: #FF1200;
+        color: $fat3;
+        a{
+            background: $fat3;
+        }
     }
 }
 
@@ -100,9 +126,15 @@ main{
     .clearAllBtn{
         font-size: 14px;
         display: none;
+        a{
+            display: inline-block;
+            color: $secondary;
+            &:hover{
+                color: gray;
+            }
+        }
     }
     h2{
-        text-align: center;
         font-size: 24px;
         color: $secondary;
         margin-bottom: 36px;
@@ -118,38 +150,38 @@ main{
         font-size: 20px;
         margin-bottom: 16px;
     }
+    .itemText{
+        margin-right: 70px;
+        font-size: 20px;
+    }
     h4{
         font-size: 12px;
         color: $secondary;
         margin-right: 7px;
     }
-    .item{
-        display: flex;
-        align-items: center;
+    p{
         margin-right: 42px;
-        &Text{
-            margin-right: 70px;
-        }
     }
     .light{
-        border-left: 7px solid #31BAF9;
+        border-left: 7px solid $light;
     }
     .balance{
-        border-left: 7px solid #86D73F;
+        border-left: 7px solid $balance;
     }
     .fat{
-        border-left: 7px solid #FF982D;
+        border-left: 7px solid  $fat;
     }
     .fat-1{
-        border-left: 7px solid #FF6C03;
+        border-left: 7px solid $fat12;
     }
     .fat-2{
-        border-left: 7px solid #FF6C03; 
+        border-left: 7px solid $fat12; 
     }
     .fat-3{
-        border-left: 7px solid #FF1200;
+        border-left: 7px solid $fat3;
     }
     a{
+        margin: 0 12px 0 auto;
         font-size: 12px;
     }
 }

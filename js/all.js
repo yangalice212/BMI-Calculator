@@ -15,22 +15,14 @@ function updateList(items){
         str +=      
         `
         <li class="${bmiData[i].status}">
-            <div class="itemText">${bmiData[i].statusText}</div>
-            <div class="item">
-                <h4>BMI</h4>
-                <p>${bmiData[i].bmi}</p>
-            </div>
-            <div class="item">
-                <h4>weight</h4>
-                <p>${bmiData[i].weight}</p>
-            </div>
-            <div class="item">
-                <h4>height</h4>
-                <p>${bmiData[i].height}</p>
-            </div>
-            <div class="item">
-                <h4>${bmiData[i].date}</h4>
-            </div>
+            <h4 class="itemText">${bmiData[i].statusText}</h4>
+            <h4>BMI</h4>
+            <p>${bmiData[i].bmi}</p>
+            <h4>weight</h4>
+            <p>${bmiData[i].weight}</p>
+            <h4>height</h4>
+            <p>${bmiData[i].height}</p>
+            <h4>${bmiData[i].date}</h4>    
             <a href="#" class="listDelete" data-index = "${i}">刪除</a>    
         </li>
         `
@@ -42,46 +34,8 @@ function updateList(items){
 function bmiCalculate(e){
     e.preventDefault();
     var bmiItem = {};
-    let Height = parseInt(height.value);
-    let Weight = parseInt(weight.value);
-    let bmi = (Weight / Math.pow(Height/100, 2)).toFixed(2); //小數點後兩位
-
-    switch(true){
-        case bmi <= 18.5:
-            bmiItem.status = "light";
-            bmiItem.statusText = "過輕";
-            break;
-        case bmi > 18.5 && bmi<=25:
-            bmiItem.status = "balance";
-            bmiItem.statusText = "理想";
-            break;
-        case bmi > 25 && bmi<=30:
-            bmiItem.status = "fat";
-            bmiItem.statusText = "過重";
-            break;
-        case bmi > 30 && bmi<=35:
-            bmiItem.status = "fat-1";
-            bmiItem.statusText = "輕度肥胖";
-            break;
-        case bmi > 35 && bmi<=40:
-            bmiItem.status = "fat-2";
-            bmiItem.statusText = "中度肥胖";
-            break;
-        case bmi > 40:
-            bmiItem.status = "fat-3";
-            bmiItem.statusText = "重度肥胖";
-            break;
-        default:
-            alert('請輸入身高體重');
-            break;
-    }
-    bmiItem.bmi = bmi;
-    bmiItem.weight = Weight;
-    bmiItem.height = Height;
-    bmiItem.date = todayDate;
-
+    BMI(bmiItem);
     bmiData.push(bmiItem);
-
     localStorage.setItem('bmiData',JSON.stringify(bmiData));
 
     //更新
@@ -93,15 +47,57 @@ function bmiCalculate(e){
     let status = document.querySelector('.status');
     let statusInner = document.querySelector('.status-inner')
     calBtn.style.display = 'none';
-    status.style.display = 'block';
+    status.style.display = 'flex';
     //status.setAttribute('class',"status " + `${bmiItem.status}`);
-    statusInner.setAttribute('class',"status " + `${bmiItem.status}`);
+    statusInner.setAttribute('class', "status-inner " + `${bmiItem.status}`);
 
     clearBtnToggle();
 }
+//BMI
+function BMI(item){
+    let Height = parseInt(height.value);
+    let Weight = parseInt(weight.value);
+    let bmi = (Weight / Math.pow(Height/100, 2)).toFixed(2); //小數點後兩位
+
+    switch(true){
+        case bmi <= 18.5:
+            item.status = "light";
+            item.statusText = "過輕";
+            break;
+        case bmi > 18.5 && bmi<=25:
+            item.status = "balance";
+            item.statusText = "理想";
+            break;
+        case bmi > 25 && bmi<=30:
+            item.status = "fat";
+            item.statusText = "過重";
+            break;
+        case bmi > 30 && bmi<=35:
+            item.status = "fat-1";
+            item.statusText = "輕度肥胖";
+            break;
+        case bmi > 35 && bmi<=40:
+            item.status = "fat-2";
+            bmiItem.statusText = "中度肥胖";
+            break;
+        case bmi > 40:
+            item.status = "fat-3";
+            item.statusText = "重度肥胖";
+            break;
+        default:
+            alert('請輸入身高體重');
+            break;
+    }
+    item.bmi = bmi;
+    item.weight = Weight;
+    item.height = Height;
+    item.date = todayDate;
+}
+
 //重新輸入資料
 function resetData(e){
     e.preventDefault();
+    let status = document.querySelector('.status');
     localStorage.removeItem('bmiData');
     updateList(bmiData);
     status.style.display = 'none';
@@ -122,9 +118,11 @@ function delItem(e){
 //清除所有資料
 function clearAllData(e){
     e.preventDefault();
+    bmiData.splice(0,99);
     localStorage.removeItem('bmiData');
+
     updateList(bmiData);
-    this.style.display = none;
+    this.style.display = 'none';
 }
 //清除所有資料按鈕是否顯示
 function clearBtnToggle(){
