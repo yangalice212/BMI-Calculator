@@ -52,10 +52,11 @@ header{
     .status{
         display: none;
         font-size: 32px;
-        text-align: center;
         .status-inner{
-            padding: 20px 18px;
             position: relative;
+            padding: 20px 18px;
+            margin-right: 18px;
+            border-radius: 50%;
         }
         a{
             position: absolute;
@@ -69,60 +70,11 @@ header{
             font-size: 14px;
         }
     }
-    .light{
-        border: 6px solid $light;
-        border-radius: 50%;
-        color: $light;
-        a{
-            background: $light;
-        }
-    }
-    .balance{
-        border: 6px solid $balance;
-        border-radius: 50%;
-        color: $balance;
-        a{
-            background: $balance;
-        }
-    }
-    .fat{
-        border: 6px solid $fat;
-        border-radius: 50%;
-        color: $fat;
-        a{
-            background: $fat;
-        }
-    }
-    .fat-1{
-        border: 6px solid $fat12;
-        border-radius: 50%;
-        color: $fat12;
-        a{
-            background: $fat12;
-        }
-    }
-    .fat-2{
-        border: 6px solid $fat12;
-        border-radius: 50%;
-        color: $fat12;
-        a{
-            background: $fat12;
-        }
-    }
-    .fat-3{
-        border: 6px solid $fat3;
-        border-radius: 50%;
-        color: $fat3;
-        a{
-            background: $fat3;
-        }
-    }
 }
 
 main{
     background: $gray;
     padding: 48px 0 74px;
-    text-align: center;
     .clearAllBtn{
         font-size: 14px;
         display: none;
@@ -161,24 +113,6 @@ main{
     }
     p{
         margin-right: 42px;
-    }
-    .light{
-        border-left: 7px solid $light;
-    }
-    .balance{
-        border-left: 7px solid $balance;
-    }
-    .fat{
-        border-left: 7px solid  $fat;
-    }
-    .fat-1{
-        border-left: 7px solid $fat12;
-    }
-    .fat-2{
-        border-left: 7px solid $fat12; 
-    }
-    .fat-3{
-        border-left: 7px solid $fat3;
     }
     a{
         margin: 0 12px 0 auto;
