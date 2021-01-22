@@ -1,0 +1,167 @@
+header{
+    background-color: $secondary;
+    padding: 92px;
+    section{
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+    }
+    .logo{
+        a{
+            background: url(../img/BMICLogo.png) no-repeat center;
+            background-size: contain;
+            @include hide-text;
+            width: 117px;
+            height: 117px;
+            color: $primary;
+        }
+    }
+    .bodyInfo{
+        label{
+            color: $primary;
+            font-size: 18px;
+        }
+        input{
+            display: block;
+            width: 250px;
+            padding: 8px 16px;
+            font-size: 24px;
+            color: white;
+            background: rgba(255,255,255,0.18);
+            border: 2px solid #FFD366;
+            border-radius: 10px;
+        }
+        .inputHeight{
+            margin-bottom: 23px;
+        }
+    }
+    .btn{
+        position: relative;
+    }
+    .calculate{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: $primary;
+        color: $secondary;
+        font-size: 24px;
+        &:hover{
+            box-shadow: 0 0 5px 5px rgba(255,196,50,.64);
+        }
+    }
+    .status{
+        display: none;
+        font-size: 32px;
+        position: relative;
+        .status-inner{
+            padding: 40px 18px;
+
+        }
+        a{
+            position: absolute;
+        }
+    }
+    .light{
+        border: 6px solid #31BAF9;
+        border-radius: 50%;
+        color: #31BAF9;
+    }
+    .balance{
+        border: 6px solid #86D73F;
+        border-radius: 50%;
+        color: #86D73F;
+    }
+    .fat{
+        border: 6px solid#FF982D;
+        border-radius: 50%;
+        color: #FF982D;
+    }
+    .fat-1{
+        border: 6px solid #FF6C03;
+        border-radius: 50%;
+        color: #FF6C03;
+    }
+    .fat-2{
+        border: 6px solid #FF6C03;
+        border-radius: 50%;
+        color: #FF6C03;
+    }
+    .fat-3{
+        border: 6px solid #FF1200;
+        border-radius: 50%;
+        color: #FF1200;
+    }
+}
+
+main{
+    background: $gray;
+    padding: 48px 0 74px;
+    text-align: center;
+    .clearAllBtn{
+        font-size: 14px;
+        display: none;
+    }
+    h2{
+        text-align: center;
+        font-size: 24px;
+        color: $secondary;
+        margin-bottom: 36px;
+    }
+    .bmiList li{
+        display: flex;
+        align-items: center;
+        max-width: 624px;
+        margin: 0 auto;
+        padding: 20px 12px;
+        background: white;
+        color: $textColor;
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    h4{
+        font-size: 12px;
+        color: $secondary;
+        margin-right: 7px;
+    }
+    .item{
+        display: flex;
+        align-items: center;
+        margin-right: 42px;
+        &Text{
+            margin-right: 70px;
+        }
+    }
+    .light{
+        border-left: 7px solid #31BAF9;
+    }
+    .balance{
+        border-left: 7px solid #86D73F;
+    }
+    .fat{
+        border-left: 7px solid #FF982D;
+    }
+    .fat-1{
+        border-left: 7px solid #FF6C03;
+    }
+    .fat-2{
+        border-left: 7px solid #FF6C03; 
+    }
+    .fat-3{
+        border-left: 7px solid #FF1200;
+    }
+    a{
+        font-size: 12px;
+    }
+}
+
+footer{
+    padding: 18px;
+    background: $primary;
+    a{
+        @include hide-text;
+        background: url(../img/BMICLogo-black.png) no-repeat;
+        width: 55px;
+        height: 55px;
+        margin: 0 auto;
+    }
+}
