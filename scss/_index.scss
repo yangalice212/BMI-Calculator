@@ -2,9 +2,8 @@ header{
     background-color: $secondary;
     padding: 92px;
     section{
-        max-width: 700px;
+        max-width: 800px;
         margin: 0 auto;
-        display: flex;
     }
     .logo{
         a{
@@ -92,8 +91,6 @@ main{
         margin-bottom: 36px;
     }
     .bmiList li{
-        display: flex;
-        align-items: center;
         max-width: 624px;
         margin: 0 auto;
         padding: 20px 12px;
@@ -101,9 +98,11 @@ main{
         color: $textColor;
         font-size: 20px;
         margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
     }
     .itemText{
-        margin-right: 70px;
+        margin-right: auto;
         font-size: 20px;
     }
     h4{
