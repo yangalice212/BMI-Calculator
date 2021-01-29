@@ -132,7 +132,7 @@ function clearAllData(e){
 //清除所有資料按鈕是否顯示
 function clearBtnToggle(){
     let bmiList = JSON.parse(localStorage.getItem('bmiData')) || [];
-    if(bmiList.length !=0){
+    if(bmiList.length !== 0){
         clearAllBtn.style.display = 'block';
     }
     else{
